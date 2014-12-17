@@ -45,7 +45,7 @@ public class GuidslFMProvider implements IFeatureModelProvider {
 	}
 
 	public boolean isFeatureModelFile(IFile file) {
-		return file.getName().equals("model.m")
+		return file.getName().equals("model.xml")
 				|| file.getName().equals("model.colors");
 	}
 

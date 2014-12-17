@@ -65,7 +65,7 @@ public class EditFeatureModelAction implements IObjectActionDelegate {
 		}
 
 		try {
-			IFile modelFile = project.getFile("model.m");
+			IFile modelFile = project.getFile("model.xml");
 			if (!modelFile.exists()) {
 				modelFile.create(new ByteArrayInputStream(
 						"Project : [Feature1] [Feature2] :: _Project ;".getBytes()), true,
@@ -76,10 +76,10 @@ public class EditFeatureModelAction implements IObjectActionDelegate {
 					FeatureModelEditor.ID);
 		} catch (PartInitException e) {
 			MessageDialog.openInformation(shell, "CIDE",
-					"Error opening model.m file.");
+					"Error opening model.xml file.");
 		} catch (CoreException e) {
 			MessageDialog.openInformation(shell, "CIDE",
-					"Error opening model.m file.");
+					"Error opening model.xml file.");
 		}
 	}
 
