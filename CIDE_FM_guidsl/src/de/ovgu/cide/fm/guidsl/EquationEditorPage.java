@@ -119,7 +119,7 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 
 	@Override
 	public Set<IFeature> getSelectedFeatures() {
-		Set<Feature> selection = configuration.getSelectedFeatures();
+		List<Feature> selection = configuration.getSelectedFeatures();
 
 		Set<IFeature> result = new HashSet<IFeature>();
 		for (Feature s : selection)
