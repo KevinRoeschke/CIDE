@@ -27,7 +27,7 @@ import org.eclipse.swt.graphics.RGB;
 
 import de.ovgu.cide.features.IFeature;
 import de.ovgu.cide.features.IFeatureWithID;
-import featureide.fm.core.Feature;
+import de.ovgu.featureide.fm.core.Feature;
 
 public class FeatureAdapter implements IFeatureWithID {
 
