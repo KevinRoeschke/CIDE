@@ -69,7 +69,7 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		IBaseLabelProvider lp = new ConfigurationLabelProvider();
+		IBaseLabelProvider lp = new AdvancedConfigurationLabelProvider(); 
 		viewer.setLabelProvider(lp);
 
 		viewer.setInput(configuration);
