@@ -33,8 +33,8 @@ import de.ovgu.cide.fm.guidsl.FeatureAdapter;
 import de.ovgu.cide.fm.guidsl.FeatureModelProxy;
 import de.ovgu.cide.typing.model.AbstractCachingEvaluationStrategy;
 import de.ovgu.cide.typing.model.DebugTyping;
-import featureide.fm.core.Feature;
-import featureide.fm.core.FeatureModel;
+import de.ovgu.featureide.fm.core.Feature;
+import de.ovgu.featureide.fm.core.FeatureModel;
 
 /**
  * evaluation strategy for the typechecker that delegates checks to the guidsl
