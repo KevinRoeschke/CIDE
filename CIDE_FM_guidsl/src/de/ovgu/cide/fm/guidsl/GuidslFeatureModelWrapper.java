@@ -162,8 +162,16 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 	private void loadModel() {
 		grammarFile.deleteAllModelMarkers();
 		try {
-			FeatureModelReader modelReader = new FeatureModelReader(model);
-			modelReader.readFromFile(grammarFile.getResource());
+			GuidslReader modelReader = new GuidslReader(model);
+			
+			IFile f = grammarFile.getResource();
+			IPath path = f.getFullPath();
+			File file = path.toFile();
+			
+			modelReader.readFromFile(file)
+
+			//modelReader.readFromFile(grammarFile.getResource())
+			;
 			for (ModelWarning warning : modelReader.getWarnings())
 				grammarFile.createModelMarker(warning.message,
 						IMarker.SEVERITY_WARNING, warning.line);
