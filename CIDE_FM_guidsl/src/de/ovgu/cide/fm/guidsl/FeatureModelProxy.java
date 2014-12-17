@@ -31,7 +31,7 @@ import de.ovgu.cide.configuration.AbstractConfigurationPage;
 import de.ovgu.cide.features.AbstractFeatureModel;
 import de.ovgu.cide.features.IFeature;
 import de.ovgu.cide.features.IFeatureModelWithID;
-import featureide.fm.core.FeatureModel;
+import de.ovgu.featureide.fm.core.FeatureModel;
 
 /**
  * this class delegates all calls to the GuidslFeatureModelWrapper or in case
