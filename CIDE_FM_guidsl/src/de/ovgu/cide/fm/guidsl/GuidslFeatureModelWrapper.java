@@ -224,7 +224,7 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 		Configuration conf = new Configuration(model, false);
 		for (IFeature feature : selection)
 			conf.setManual(feature.getName(), Selection.SELECTED);
-		return conf.valid();
+		return conf.isValid();
 	}
 
 	public IFeature createNewFeature() {
