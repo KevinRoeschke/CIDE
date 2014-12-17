@@ -33,12 +33,12 @@ import org.eclipse.swt.widgets.Control;
 
 import de.ovgu.cide.configuration.AbstractConfigurationPage;
 import de.ovgu.cide.features.IFeature;
-import featureide.fm.core.Feature;
-import featureide.fm.core.configuration.Configuration;
-import featureide.fm.core.configuration.SelectableFeature;
-import featureide.fm.core.configuration.Selection;
-import featureide.fm.ui.editors.configuration.ConfigurationContentProvider;
-import featureide.fm.ui.editors.configuration.ConfigurationLabelProvider;
+import de.ovgu.featureide.fm.core.Feature;
+import de.ovgu.featureide.fm.core.configuration.Configuration;
+import de.ovgu.featureide.fm.core.configuration.SelectableFeature;
+import de.ovgu.featureide.fm.core.configuration.Selection;
+import de.ovgu.featureide.fm.ui.editors.configuration.ConfigurationContentProvider;
+import de.ovgu.featureide.fm.ui.editors.configuration.AdvancedConfigurationLabelProvider;
 
 public class EquationEditorPage extends AbstractConfigurationPage {
 
