@@ -51,7 +51,7 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 		super(pageName, featureModel);
 		this.model = featureModel;
 		configuration = new Configuration(featureModel.model, true);
-		setPageComplete(configuration.valid());
+		setPageComplete(configuration.isValid()); 
 		setTitle("Feature selection");
 		this.setDescription("Select features for a variant (double-click on feature to select or deselect)");
 	}
@@ -112,7 +112,7 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 	}
 
 	protected void configChanged() {
-		boolean isValid = configuration.valid();
+		boolean isValid = configuration.isValid(); 
 		setPageComplete(isValid);
 		setErrorMessage(isValid ? null : "Invalid selection");
 	}
