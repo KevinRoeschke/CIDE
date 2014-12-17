@@ -49,14 +49,16 @@ import de.ovgu.cide.configuration.AbstractConfigurationPage;
 import de.ovgu.cide.configuration.NonValidatingConfigurationListPage;
 import de.ovgu.cide.features.AbstractFeatureModel;
 import de.ovgu.cide.features.IFeature;
-import featureide.fm.core.Feature;
-import featureide.fm.core.FeatureModel;
-import featureide.fm.core.GrammarFile;
-import featureide.fm.core.configuration.Configuration;
-import featureide.fm.core.configuration.Selection;
-import featureide.fm.core.io.ModelWarning;
-import featureide.fm.core.io.UnsupportedModelException;
-import featureide.fm.core.io.guidsl.FeatureModelReader;
+import de.ovgu.featureide.fm.core.Feature;
+import de.ovgu.featureide.fm.core.FeatureModel;
+import de.ovgu.featureide.fm.core.FeatureModelFile;
+import de.ovgu.featureide.fm.core.PropertyConstants;
+//import de.ovgu.featureide.fm.core.GrammarFile;
+import de.ovgu.featureide.fm.core.configuration.Configuration;
+import de.ovgu.featureide.fm.core.configuration.Selection;
+import de.ovgu.featureide.fm.core.io.ModelWarning;
+import de.ovgu.featureide.fm.core.io.UnsupportedModelException;
+import de.ovgu.featureide.fm.core.io.guidsl.GuidslReader;
 
 /**
  * this class wraps a feature model from the FeatureIDE implementation.
