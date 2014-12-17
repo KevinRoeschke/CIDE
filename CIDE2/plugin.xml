@@ -40,7 +40,7 @@
 		</perspectiveExtension>
 	</extension>
 	<extension point="org.eclipse.ui.popupMenus">
-		<objectContribution adaptable="false"
+		<objectContribution adaptable="true"
 			id="coloredide.projectContributions" objectClass="org.eclipse.core.resources.IProject">
 			<menu
          icon="icons/interaction.gif"
