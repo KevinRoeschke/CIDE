@@ -92,6 +92,7 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 			System.out.println("Model "
 					+ grammarFile.getResource().getFullPath() + " changed");
 			Job job = new Job("Load Model") {
+				@Override
 				protected IStatus run(IProgressMonitor monitor) {
 					List<Change> changes = new ArrayList<Change>();
 					for (IFeature f : getFeatures())
@@ -116,7 +117,7 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 	private final PropertyChangeListener changeListener = new PropertyChangeListener() {
 
 		public void propertyChange(PropertyChangeEvent evt) {
-			if (evt.getPropertyName().equals(FeatureModel.FEATURE_NAME_CHANGED)) {
+			if (evt.getPropertyName().equals(PropertyConstants.FEATURE_NAME_CHANGED)) {
 				extraAttributeStorage.notifyFeatureRenamed(evt.getOldValue()
 						.toString(), evt.getNewValue().toString());
 			}
