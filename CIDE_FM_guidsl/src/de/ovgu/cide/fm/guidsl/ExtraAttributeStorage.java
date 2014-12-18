@@ -44,6 +44,11 @@ public class ExtraAttributeStorage {
 
 	private IFile file;
 	private GuidslFeatureModelWrapper featureModel;
+	//private XmlFeatureModelReader featureModel;
+	private Map<String, Long> featureIds;
+	private Map<Long, RGB> featureColors;
+	private Map<Long, Boolean> featureVisibility;
+	private final static long serialVersionUID = 1L;
 
 	public ExtraAttributeStorage(IFile storageFile,
 			GuidslFeatureModelWrapper featureModel) {
@@ -112,11 +117,6 @@ public class ExtraAttributeStorage {
 		return null;
 	}
 
-	private Map<String, Long> featureIds;
-	private Map<Long, RGB> featureColors;
-	private Map<Long, Boolean> featureVisibility;
-
-	private final static long serialVersionUID = 1L;
 
 	@SuppressWarnings("unchecked")
 	private void load() {
