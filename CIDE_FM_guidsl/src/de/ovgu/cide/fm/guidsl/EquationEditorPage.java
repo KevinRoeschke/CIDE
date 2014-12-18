@@ -21,13 +21,16 @@
 package de.ovgu.cide.fm.guidsl;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -63,7 +66,7 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 		viewer.setContentProvider(new ConfigurationContentProvider());
 		try {
 			Class<?> c = Class
-					.forName("featureide.fm.ui.editors.configuration.ConfigurationLabelProvider");
+					.forName("de.ovgu.featureide.fm.ui.editors.configuration.AdvancedConfigurationLabelProvider");
 			System.out.println(c);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
