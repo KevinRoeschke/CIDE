@@ -73,6 +73,10 @@ import de.ovgu.featureide.fm.core.io.xml.XmlFeatureModelReader;
  */
 public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 
+	private FeatureModelFile grammarFile;
+	FeatureModel model;
+	public ExtraAttributeStorage extraAttributeStorage;
+		
 	private class ModelResourceChangeListener implements
 			IResourceChangeListener {
 
@@ -108,9 +112,7 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 
 	}
 
-	private GrammarFile grammarFile;
-	FeatureModel model;
-	public ExtraAttributeStorage extraAttributeStorage;
+
 	private final PropertyChangeListener changeListener = new PropertyChangeListener() {
 
 		public void propertyChange(PropertyChangeEvent evt) {
