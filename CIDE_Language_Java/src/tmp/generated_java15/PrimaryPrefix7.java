@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class PrimaryPrefix7 extends PrimaryPrefix {
@@ -14,7 +13,8 @@ public class PrimaryPrefix7 extends PrimaryPrefix {
   public PrimaryPrefix7(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new PrimaryPrefix7(cloneProperties(),firstToken,lastToken);
   }
   public Name getName() {

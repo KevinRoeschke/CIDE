@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ResultType1 extends ResultType {
@@ -13,7 +12,8 @@ public class ResultType1 extends ResultType {
   public ResultType1(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ResultType1(cloneProperties(),firstToken,lastToken);
   }
 }

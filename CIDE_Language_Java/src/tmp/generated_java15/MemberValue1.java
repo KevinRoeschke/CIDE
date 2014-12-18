@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class MemberValue1 extends MemberValue {
@@ -14,7 +13,8 @@ public class MemberValue1 extends MemberValue {
   public MemberValue1(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new MemberValue1(cloneProperties(),firstToken,lastToken);
   }
   public Annotation getAnnotation() {

@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class AllocationExpressionInit2 extends AllocationExpressionInit {
@@ -15,7 +14,8 @@ public class AllocationExpressionInit2 extends AllocationExpressionInit {
   public AllocationExpressionInit2(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new AllocationExpressionInit2(cloneProperties(),firstToken,lastToken);
   }
   public Arguments getArguments() {

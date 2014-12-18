@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class PrimarySuffix2 extends PrimarySuffix {
@@ -14,7 +13,8 @@ public class PrimarySuffix2 extends PrimarySuffix {
   public PrimarySuffix2(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new PrimarySuffix2(cloneProperties(),firstToken,lastToken);
   }
   public AllocationExpression getAllocationExpression() {

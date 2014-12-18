@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ClassOrInterfaceType extends GenASTNode {
@@ -16,7 +15,8 @@ public class ClassOrInterfaceType extends GenASTNode {
   public ClassOrInterfaceType(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ClassOrInterfaceType(cloneProperties(),firstToken,lastToken);
   }
   public ASTStringNode getIdentifier() {

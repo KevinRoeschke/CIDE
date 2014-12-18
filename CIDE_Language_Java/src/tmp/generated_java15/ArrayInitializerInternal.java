@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ArrayInitializerInternal extends GenASTNode {
@@ -15,7 +14,8 @@ public class ArrayInitializerInternal extends GenASTNode {
   public ArrayInitializerInternal(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ArrayInitializerInternal(cloneProperties(),firstToken,lastToken);
   }
   public VariableInitializer getVariableInitializer() {

@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class AssignmentOperator5 extends AssignmentOperator {
@@ -13,7 +12,8 @@ public class AssignmentOperator5 extends AssignmentOperator {
   public AssignmentOperator5(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new AssignmentOperator5(cloneProperties(),firstToken,lastToken);
   }
 }

@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class MarkerAnnotation extends GenASTNode {
@@ -14,7 +13,8 @@ public class MarkerAnnotation extends GenASTNode {
   public MarkerAnnotation(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new MarkerAnnotation(cloneProperties(),firstToken,lastToken);
   }
   public Name getName() {

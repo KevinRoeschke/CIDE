@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class StatementExpressionAssignment2 extends StatementExpressionAssignment {
@@ -13,7 +12,8 @@ public class StatementExpressionAssignment2 extends StatementExpressionAssignmen
   public StatementExpressionAssignment2(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new StatementExpressionAssignment2(cloneProperties(),firstToken,lastToken);
   }
 }

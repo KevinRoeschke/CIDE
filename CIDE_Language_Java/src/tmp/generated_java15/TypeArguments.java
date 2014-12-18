@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class TypeArguments extends GenASTNode {
@@ -15,7 +14,8 @@ public class TypeArguments extends GenASTNode {
   public TypeArguments(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new TypeArguments(cloneProperties(),firstToken,lastToken);
   }
   public TypeArgument getTypeArgument() {

@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class EnumBody extends GenASTNode {
@@ -15,7 +14,8 @@ public class EnumBody extends GenASTNode {
   public EnumBody(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new EnumBody(cloneProperties(),firstToken,lastToken);
   }
   public ArrayList<EnumConstant> getEnumConstant() {

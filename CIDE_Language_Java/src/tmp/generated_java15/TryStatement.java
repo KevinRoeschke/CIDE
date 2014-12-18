@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class TryStatement extends GenASTNode {
@@ -15,7 +14,8 @@ public class TryStatement extends GenASTNode {
   public TryStatement(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new TryStatement(cloneProperties(),firstToken,lastToken);
   }
   public Block getBlock() {

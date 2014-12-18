@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class TypeArgument2 extends TypeArgument {
@@ -14,7 +13,8 @@ public class TypeArgument2 extends TypeArgument {
   public TypeArgument2(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new TypeArgument2(cloneProperties(),firstToken,lastToken);
   }
   public WildcardBounds getWildcardBounds() {

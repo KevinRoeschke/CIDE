@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ForStatementInternal2 extends ForStatementInternal {
@@ -16,7 +15,8 @@ public class ForStatementInternal2 extends ForStatementInternal {
   public ForStatementInternal2(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ForStatementInternal2(cloneProperties(),firstToken,lastToken);
   }
   public ForInit getForInit() {

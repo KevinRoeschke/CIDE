@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ForInit1 extends ForInit {
@@ -14,7 +13,8 @@ public class ForInit1 extends ForInit {
   public ForInit1(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ForInit1(cloneProperties(),firstToken,lastToken);
   }
   public LocalVariableDeclaration getLocalVariableDeclaration() {

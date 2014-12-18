@@ -5,8 +5,6 @@ import cide.gast.*;
 
 import java.io.PrintStream;
 
-import cide.languages.*;
-
 /** package visibility. use only via ASTNode.render() **/
 public class SimplePrintVisitor extends AbstractPrintVisitor {
 	public SimplePrintVisitor(PrintStream out) {
@@ -15,6 +13,7 @@ public class SimplePrintVisitor extends AbstractPrintVisitor {
 	public SimplePrintVisitor() {
 		super();
 	}
+	@Override
 	public boolean visit(IASTNode node) {
 		if (node instanceof ASTStringNode){
 			printToken(((ASTStringNode)node).getValue());

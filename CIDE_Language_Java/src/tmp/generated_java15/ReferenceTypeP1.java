@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class ReferenceTypeP1 extends ReferenceTypeP {
@@ -15,7 +14,8 @@ public class ReferenceTypeP1 extends ReferenceTypeP {
   public ReferenceTypeP1(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new ReferenceTypeP1(cloneProperties(),firstToken,lastToken);
   }
   public PrimitiveType getPrimitiveType() {

@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public abstract class GenASTNode extends ASTNode {
@@ -14,11 +13,13 @@ public abstract class GenASTNode extends ASTNode {
   public GenASTNode(Property[] p, IToken firstToken, IToken lastToken) {
     super(p, firstToken, lastToken);
   }
-  public String toString() {
+  @Override
+public String toString() {
     return this.getClass().getSimpleName() + " " + this.getStartPosition()
         + "-" + (this.getStartPosition() + this.getLength());
   }
-  public String render() {
+  @Override
+public String render() {
     SimplePrintVisitor v=new SimplePrintVisitor();
     accept(v);
     return v.getResult();

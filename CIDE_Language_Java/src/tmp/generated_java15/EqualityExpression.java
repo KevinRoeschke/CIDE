@@ -2,7 +2,6 @@ package tmp.generated_java15;
 
 import cide.gast.*;
 import cide.gparser.*;
-import cide.greferences.*;
 import java.util.*;
 
 public class EqualityExpression extends GenASTNode {
@@ -15,7 +14,8 @@ public class EqualityExpression extends GenASTNode {
   public EqualityExpression(Property[] properties, IToken firstToken, IToken lastToken) {
     super(properties,firstToken,lastToken);
   }
-  public IASTNode deepCopy() {
+  @Override
+public IASTNode deepCopy() {
     return new EqualityExpression(cloneProperties(),firstToken,lastToken);
   }
   public InstanceOfExpression getInstanceOfExpression() {
