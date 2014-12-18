@@ -167,10 +167,10 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 	private void loadModel() {
 		grammarFile.deleteAllModelMarkers();
 		try {
-			GuidslReader modelReader = new GuidslReader(model);
+			XmlFeatureModelReader modelReader = new XmlFeatureModelReader(model);
 			
 			IFile f = grammarFile.getResource();
-			IPath path = f.getFullPath();
+			IPath path = f.getRawLocation();
 			File file = path.toFile();
 			
 			modelReader.readFromFile(file)
