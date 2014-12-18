@@ -30,8 +30,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import de.ovgu.cide.af.Alternative;
-import de.ovgu.cide.af.RootAlternative;
+import de.ovgu.cide.alternativefeatures.Alternative;
+import de.ovgu.cide.alternativefeatures.RootAlternative;
 import de.ovgu.cide.features.IFeature;
 import de.ovgu.cide.features.IFeatureModelWithID;
 import de.ovgu.cide.features.IFeatureWithID;

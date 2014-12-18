@@ -5,12 +5,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 
-import de.ovgu.cide.af.Alternative;
+import de.ovgu.cide.alternativefeatures.Alternative;
 import de.ovgu.cide.features.IFeature;
 import de.ovgu.cide.features.IFeatureModel;
 import de.ovgu.cide.features.IFeatureModelWithID;
@@ -81,5 +82,11 @@ public class XMLStorageProvider implements IStorageProvider {
 	
 	public boolean canHandleAlternatives() {
 		return true;
+	}
+
+	@Override
+	public boolean isColorStorageFile(IFile file) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

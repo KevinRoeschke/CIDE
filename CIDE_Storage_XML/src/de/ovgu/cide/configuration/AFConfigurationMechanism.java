@@ -15,7 +15,7 @@ import cide.gast.IASTVisitor;
 import cide.gparser.ParseException;
 import cide.languages.ExtendedLanguageExtension;
 import cide.languages.ILanguageExtension;
-import de.ovgu.cide.af.Alternative;
+import de.ovgu.cide.alternativefeatures.Alternative;
 import de.ovgu.cide.configuration.defaultconf.DefaultConfigurationMechanism;
 import de.ovgu.cide.features.FeatureModelNotFoundException;
 import de.ovgu.cide.features.IFeature;
