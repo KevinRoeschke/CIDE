@@ -68,7 +68,7 @@ public class FeatureModelProxy implements IFeatureModelWithID {
 		if (targetFeatureModel != null)
 			return targetFeatureModel;
 
-		if (project.exists() && project.getFile("model.m").exists())
+		if (project.exists() && project.getFile("model.xml").exists())
 			return targetFeatureModel = GuidslFeatureModelWrapper
 					.getInstance(project);
 

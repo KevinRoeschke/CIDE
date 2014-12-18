@@ -137,7 +137,7 @@ public class GuidslFeatureModelWrapper extends AbstractFeatureModel {
 
 	private GuidslFeatureModelWrapper(IProject project) {
 		super(project);
-		this.grammarFile = new FeatureModelFile(project.getFile("model.m"));
+		this.grammarFile = new FeatureModelFile(project.getFile("model.xml"));
 		this.model = new FeatureModel();
 		this.extraAttributeStorage = new ExtraAttributeStorage(project
 				.getFile("model.colors"), this);
