@@ -47,10 +47,10 @@ public class EquationEditorPage extends AbstractConfigurationPage {
 
 	private TreeViewer viewer;
 	private final Configuration configuration;
-	private GuidslFeatureModelWrapper model;
+	private FeatureModelWrapper model;
 
 	public EquationEditorPage(String pageName,
-			GuidslFeatureModelWrapper featureModel) {
+			FeatureModelWrapper featureModel) {
 		super(pageName, featureModel);
 		this.model = featureModel;
 		configuration = new Configuration(featureModel.model, true);

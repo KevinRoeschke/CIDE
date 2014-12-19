@@ -43,7 +43,7 @@ import de.ovgu.featureide.fm.core.Feature;
 public class ExtraAttributeStorage {
 
 	private IFile file;
-	private GuidslFeatureModelWrapper featureModel;
+	private FeatureModelWrapper featureModel;
 	//private XmlFeatureModelReader featureModel;
 	private Map<String, Long> featureIds;
 	private Map<Long, RGB> featureColors;
@@ -51,7 +51,7 @@ public class ExtraAttributeStorage {
 	private final static long serialVersionUID = 1L;
 
 	public ExtraAttributeStorage(IFile storageFile,
-			GuidslFeatureModelWrapper featureModel) {
+			FeatureModelWrapper featureModel) {
 		this.file = storageFile;
 		this.featureModel = featureModel;
 		load();

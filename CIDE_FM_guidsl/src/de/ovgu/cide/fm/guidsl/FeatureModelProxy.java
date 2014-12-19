@@ -69,7 +69,7 @@ public class FeatureModelProxy implements IFeatureModelWithID {
 			return targetFeatureModel;
 
 		if (project.exists() && project.getFile("model.xml").exists())
-			return targetFeatureModel = GuidslFeatureModelWrapper
+			return targetFeatureModel = FeatureModelWrapper
 					.getInstance(project);
 
 		return new EmptyFeatureModel(project);
@@ -159,8 +159,8 @@ public class FeatureModelProxy implements IFeatureModelWithID {
 	public FeatureModel getInternalModel() {
 		if (targetFeatureModel == null)
 			return null;
-		assert targetFeatureModel instanceof GuidslFeatureModelWrapper;
-		return ((GuidslFeatureModelWrapper) targetFeatureModel)
+		assert targetFeatureModel instanceof FeatureModelWrapper;
+		return ((FeatureModelWrapper) targetFeatureModel)
 				.getInternalModel();
 	}
 

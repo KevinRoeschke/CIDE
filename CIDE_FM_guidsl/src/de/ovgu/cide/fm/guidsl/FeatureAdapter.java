@@ -32,9 +32,9 @@ import de.ovgu.featureide.fm.core.Feature;
 public class FeatureAdapter implements IFeatureWithID {
 
 	private Feature feature;
-	private GuidslFeatureModelWrapper model;
+	private FeatureModelWrapper model;
 
-	public FeatureAdapter(Feature feature, GuidslFeatureModelWrapper model) {
+	public FeatureAdapter(Feature feature, FeatureModelWrapper model) {
 		this.feature = feature;
 		this.model = model;
 	}
