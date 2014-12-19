@@ -80,7 +80,7 @@ public class ConfGenTask extends Task {
 				System.out.println("\t[NONE]");
 
 			CreateConfigurationJob job = new CreateConfigurationJob(
-					sourceProject, features, outputProject);
+					sourceProject, features);
 			IProgressMonitor monitor = (IProgressMonitor) getProject()
 					.getReferences()
 					.get(AntCorePlugin.ECLIPSE_PROGRESS_MONITOR);

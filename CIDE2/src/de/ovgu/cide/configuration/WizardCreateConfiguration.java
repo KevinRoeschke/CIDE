@@ -57,8 +57,7 @@ public class WizardCreateConfiguration extends Wizard {
 	public boolean performFinish() {
 
 		CreateConfigurationJob job = new CreateConfigurationJob(sourceProject,
-				selectFeaturesPage.getSelectedFeatures(),
-				createProjectPage.projectName.getText());
+				selectFeaturesPage.getSelectedFeatures());
 		job.setUser(true);
 		job.setPriority(Job.LONG);
 		job.schedule();
