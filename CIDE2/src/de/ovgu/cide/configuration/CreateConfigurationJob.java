@@ -22,7 +22,7 @@ package de.ovgu.cide.configuration;
 
 import java.io.ByteArrayInputStream;
 import java.util.Set;
-
+import de.ovgu.featureide.core.*;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -50,56 +50,83 @@ public class CreateConfigurationJob extends WorkspaceJob {
 	private final IWorkspaceRoot root;
 
 	private final IProject sourceProject;
-
+	
 	private final Set<IFeature> selectedFeatures;
 
-	private final IProject targetProject;
-
+	
+	
+	private final IFolder srcFolder;
+	
 	private IFeatureModel featureModel;
 
 	private IStorageProvider storageProvider;
 
+	private IFolder targetProjectFolder;
+
+	/*
 	public CreateConfigurationJob(IProject sourceProject,
 			Set<IFeature> selectedFeatures, String projectName) {
 		super("Generating Variant: " + sourceProject.getName() + " -> "
 				+ projectName);
+		
 		this.sourceProject = sourceProject;
+		this.srcFolder = sourceProject.getFolder("src");
+		
 		root = ResourcesPlugin.getWorkspace().getRoot();
 		this.targetProject = root.getProject(projectName);
 		this.selectedFeatures = selectedFeatures;
 
 	}
+	*/
+	public CreateConfigurationJob(IProject sourceProject,
+			Set<IFeature> selectedFeatures) {
+		super("Generating Variant: " + sourceProject.getName() + " -> "
+				+ sourceProject.getName() + ".src");
+		
+		this.sourceProject = sourceProject;
+		this.srcFolder = sourceProject.getFolder("src");
+		
+		root = ResourcesPlugin.getWorkspace().getRoot();
+		this.targetProjectFolder = root.getFolder(srcFolder.getFullPath());
+		this.selectedFeatures = selectedFeatures;
+
+	}
+	
 
 	public IStatus runInWorkspace(IProgressMonitor monitor)
 			throws CoreException {
 		int coloredFileCount = countColoredFiles(sourceProject);
 
 		monitor.beginTask("Generating Variant", coloredFileCount + 3);
-
+	/*
 		if (targetProject.exists()) {
 			monitor.subTask("Removing existing project.");
 			targetProject.delete(true, new SubProgressMonitor(monitor, 0));
 		}
+	*/
 		monitor.worked(1);
 
 		monitor.subTask("Creating target project.");
-		targetProject.create(sourceProject.getDescription(),
+	/*	targetProject.create(sourceProject.getDescription(),
 				new SubProgressMonitor(monitor, 0));
 		targetProject.open(new SubProgressMonitor(monitor, 0));
 		monitor.worked(1);
+	*/
 		monitor.subTask("Generating new project variant.");
 		IFile cpFile = sourceProject.getFile(".classpath");
-		if (cpFile.exists())
+	/*	if (cpFile.exists())
 			cpFile.copy(targetProject.getFile(".classpath").getFullPath(),
 					true, new SubProgressMonitor(monitor, 0));
 		monitor.worked(1);
-
+	*/
 		featureModel = FeatureModelManager.getInstance().getFeatureModelCore(
 				sourceProject);
 		storageProvider = StorageProviderManager.getInstance()
 				.getStorageProvider(sourceProject, featureModel);
 
-		configureProject(sourceProject, targetProject, monitor);
+		
+		IFeatureProject featureProject = CorePlugin.getFeatureProject(sourceProject);
+		configureProject(featureProject.getSourceFolder(), monitor);
 
 		monitor.done();
 		return Status.OK_STATUS;
@@ -119,13 +146,13 @@ public class CreateConfigurationJob extends WorkspaceJob {
 		return count;
 	}
 
-	private void configureProject(IProject sourceProject,
-			IProject targetProject, IProgressMonitor monitor)
+	private void configureProject(IFolder sourceFolder,
+			/*IProject targetProject*/ IProgressMonitor monitor)
 			throws CoreException {
-		monitor.subTask("Generating Project Variant "
-				+ targetProject.getProject().getName());
+		monitor.subTask("Generating Project Variant ");
 
-		configureContainer(sourceProject, monitor);
+		for(IResource c: sourceFolder.members())
+		configureContainer((IContainer) c, monitor);
 	}
 
 	private void configureContainer(IContainer container,
@@ -151,8 +178,8 @@ public class CreateConfigurationJob extends WorkspaceJob {
 		if (monitor.isCanceled())
 			return;
 
-		if (FeatureModelManager.getInstance().isFeatureModelFile(file))
-			return;
+		//if (FeatureModelManager.getInstance().isFeatureModelFile(file))
+		//	return;
 		if (storageProvider.isColorStorageFile(file))
 			return;
 
@@ -164,11 +191,8 @@ public class CreateConfigurationJob extends WorkspaceJob {
 				file, featureModel);
 
 		if (!sourceFile.isColored()) {
-			IFile targetFile = targetProject.getFile(file.getFullPath()
-					.removeFirstSegments(1));
-			ensureDirectoryExists(targetFile, monitor);
-			if (!targetFile.exists())
-				file.copy(targetFile.getFullPath(), true, monitor);
+			
+				file.copy(srcFolder.getFullPath(), true, monitor);
 			return;
 		}
 
@@ -181,8 +205,8 @@ public class CreateConfigurationJob extends WorkspaceJob {
 			configuredSource = "";
 		}
 		if (!configuredSource.trim().equals("")) {
-			IFile targetFile = targetProject.getFile(file.getFullPath()
-					.removeFirstSegments(1));
+			IFile targetFile = srcFolder.getFile(file.getFullPath()
+					.removeFirstSegments(2));
 			ensureDirectoryExists(targetFile, monitor);
 			targetFile.create(new ByteArrayInputStream(configuredSource
 					.getBytes()), true, monitor);
